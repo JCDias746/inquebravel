@@ -473,7 +473,18 @@
   <div style="max-width:740px;margin:0 auto;">
     <p style="font-size:13px;color:rgba(201,168,76,0.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;">Assista antes de continuar</p>
     <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;border:1px solid rgba(201,168,76,0.2);">
-      <div id="vimeo-placeholder" style="position:absolute;top:0;left:0;width:100%;height:100%;background:#111;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="this.parentNode.innerHTML='<iframe src=\"https://player.vimeo.com/video/1174147499?h=d61f492290&autoplay=1&title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen></iframe>';"><svg width=\"68\" height=\"68\" viewBox=\"0 0 68 68\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"34\" cy=\"34\" r=\"34\" fill=\"rgba(201,168,76,0.9)\"/><polygon points=\"28,22 50,34 28,46\" fill=\"#0E0C09\"/></svg></div>
+      <div id="vimeo-placeholder" style="position:absolute;top:0;left:0;width:100%;height:100%;background:#111;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="34" cy="34" r="34" fill="rgba(201,168,76,0.9)"/>
+          <polygon points="28,22 50,34 28,46" fill="#0E0C09"/>
+        </svg>
+      </div>
+      <script>
+        document.getElementById('vimeo-placeholder').addEventListener('click', function() {
+          var container = this.parentNode;
+          container.innerHTML = '<iframe src="https://player.vimeo.com/video/1174147499?h=d61f492290&autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+        });
+      </script>
     </div>
     <p style="font-size:13px;color:rgba(245,240,232,0.3);margin-top:12px;font-style:italic;">O relato real de como transformei o isolamento absoluto no mapa para uma reconstrução de vida.</p>
   </div>
@@ -528,7 +539,7 @@
     <div class="books-grid">
 
       <div class="book-card">
-        <div style="text-align:center;margin-bottom:16px;"><img src="book-1.webp" width="400" height="600" loading="lazy" decoding="async" alt="De Volta para o Nada" style="width:140px;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,0.2);"></div>
+        <div style="text-align:center;margin-bottom:16px;"><img src="book-1.webp" loading="lazy" decoding="async" alt="De Volta para o Nada" style="width:140px;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,0.2);"></div>
         <div class="book-num">01</div>
         <div class="book-for">Para quem perdeu tudo</div>
         <div class="book-title">De Volta para o Nada — A Humanidade de Ashir</div>
@@ -536,7 +547,7 @@
       </div>
 
       <div class="book-card">
-        <div style="text-align:center;margin-bottom:16px;"><img src="book-2.webp" width="400" height="600" loading="lazy" decoding="async" alt="Quando Morri por Dentro" style="width:140px;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,0.2);"></div>
+        <div style="text-align:center;margin-bottom:16px;"><img src="book-2.webp" loading="lazy" decoding="async" alt="Quando Morri por Dentro" style="width:140px;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,0.2);"></div>
         <div class="book-num">02</div>
         <div class="book-for">Para quem vive um trauma</div>
         <div class="book-title">Quando Morri por Dentro</div>
@@ -544,7 +555,7 @@
       </div>
 
       <div class="book-card">
-        <div style="text-align:center;margin-bottom:16px;"><img src="book-3.webp" width="400" height="600" loading="lazy" decoding="async" alt="Recomeçar com Propósito" style="width:140px;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,0.2);"></div>
+        <div style="text-align:center;margin-bottom:16px;"><img src="book-3.webp" loading="lazy" decoding="async" alt="Recomeçar com Propósito" style="width:140px;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,0.2);"></div>
         <div class="book-num">03</div>
         <div class="book-for">Para quem quer recomeçar</div>
         <div class="book-title">Recomeçar com Propósito — O Próximo Capítulo</div>
@@ -709,7 +720,7 @@
     <span class="section-label">O homem por trás dos registros</span>
 
     <div class="author-section">
-      <img src="book-4.webp" width="400" height="600" loading="lazy" decoding="async" alt="J.C. Dias" style="width:200px;height:260px;object-fit:cover;object-position:top center;border-radius:6px;border:1px solid rgba(201,168,76,0.2);">
+      <img src="book-4.webp" loading="lazy" decoding="async" alt="J.C. Dias" style="width:200px;height:260px;object-fit:cover;object-position:top center;border-radius:6px;border:1px solid rgba(201,168,76,0.2);">
       <div>
         <div class="author-name">J.C. Dias</div>
         <div class="author-title">Autor · Diretor Internacional · Brasil → Reino Unido desde 2016</div>
