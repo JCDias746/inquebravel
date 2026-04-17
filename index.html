@@ -508,18 +508,13 @@
 (function() {
   var el = document.getElementById('urgency-timer');
   if (!el) return;
-  var key = 'urgency_end';
-  var end = localStorage.getItem(key);
-  if (!end) {
-    end = Date.now() + 15 * 60 * 1000;
-    try { localStorage.setItem(key, end); } catch(e) {}
-  }
+  var secs = 14 * 60 + 59;
   function tick() {
-    var diff = parseInt(end) - Date.now();
-    if (diff <= 0) { el.textContent = '00:00'; return; }
-    var m = Math.floor(diff / 60000);
-    var s = Math.floor((diff % 60000) / 1000);
+    if (secs < 0) { el.textContent = '00:00'; return; }
+    var m = Math.floor(secs / 60);
+    var s = secs % 60;
     el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    secs--;
     setTimeout(tick, 1000);
   }
   tick();
@@ -849,7 +844,7 @@
 </div>
 
 <footer>
-  <p>© 2026 J.C. Dias · Todos os direitos reservados · <a href="https://www.jcdias.com" style="color: var(--gold); text-decoration: none;">jcdias.com</a></p>
+  <p>© 2026 J.C. Dias · Todos os direitos reservados</p>
 </footer>
 
 
