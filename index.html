@@ -490,36 +490,7 @@
     <p style="margin-top:8px;font-size:13px;color:rgba(201,168,76,0.6);font-weight:500;">Assista até ao fim — a história muda tudo.</p>
   </div>
 </section>
-<script>
-(function() {
-  var wrapper = document.getElementById('vsl-wrapper');
-  var overlay = document.getElementById('vsl-overlay');
-  var iframe  = document.getElementById('vsl-iframe');
-  wrapper.addEventListener('click', function() {
-    overlay.style.opacity = '0';
-    overlay.style.pointerEvents = 'none';
-    iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
-    iframe.style.opacity = '1';
-    iframe.style.pointerEvents = 'auto';
-  });
-})();
 
-// Urgency countdown timer
-(function() {
-  var el = document.getElementById('urgency-timer');
-  if (!el) return;
-  var secs = 14 * 60 + 59;
-  function tick() {
-    if (secs < 0) { el.textContent = '00:00'; return; }
-    var m = Math.floor(secs / 60);
-    var s = secs % 60;
-    el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
-    secs--;
-    setTimeout(tick, 1000);
-  }
-  tick();
-})();
-</script>
 
 <!-- PROOF BAR -->
 <div class="proof-bar">
@@ -872,5 +843,36 @@
   src="https://www.facebook.com/tr?id=2122287675194601&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+<script>
+(function() {
+  var wrapper = document.getElementById('vsl-wrapper');
+  var overlay = document.getElementById('vsl-overlay');
+  var iframe  = document.getElementById('vsl-iframe');
+  if (wrapper) {
+    wrapper.addEventListener('click', function() {
+      overlay.style.opacity = '0';
+      overlay.style.pointerEvents = 'none';
+      iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
+      iframe.style.opacity = '1';
+      iframe.style.pointerEvents = 'auto';
+    });
+  }
+})();
+
+(function() {
+  var el = document.getElementById('urgency-timer');
+  if (!el) return;
+  var secs = 14 * 60 + 59;
+  function tick() {
+    if (secs < 0) { el.textContent = '00:00'; return; }
+    var m = Math.floor(secs / 60);
+    var s = secs % 60;
+    el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    secs--;
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
 </body>
 </html>
